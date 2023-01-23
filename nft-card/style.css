@@ -30,12 +30,11 @@ card {
 
 #icon {
     width: 100%;
+    border-radius: 12px;
 }
 
 .icon-wrapper {
     position: relative;
-    border-radius: 12px;
-    overflow: hidden;
     cursor:pointer;
 }
 
@@ -74,6 +73,7 @@ h1:hover, .auth:hover, .price {
     inset: 0;
     background: url('./images/icon-view.svg') hsla(178, 100%, 50%, 0.5) no-repeat center;
     z-index: 3;
+    border-radius: 12px;
 }
 
 
