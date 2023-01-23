@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: hsl(217, 54%, 11%);
+    color: hsl(0, 0%, 100%);
+}
+
+.card {
+    background-color: hsl(216, 50%, 16%);
+    max-width: 400px;
+    min-width: 320px;
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#icon {
+    width: 100%;
+}
+
+.icon-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-wrapper span, .author {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+hr {
+    background: hsl(215, 32%, 27%);
+    height: 0.1em;
+    border: 0;
+}
+
+#avatar {
+    width: 2.5em;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+h1:hover, .auth:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+.icon-wrapper:hover:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('./images/icon-view.svg') hsla(178, 100%, 50%, 0.5) no-repeat center;
+    z-index: 3;
+}
