@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+*,*::after,*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main{
+  display: flex;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1em;
+  padding: 3em;
+  border-radius: 1em;
+  background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+  color:  hsl(0, 0%, 100%);
+}
+
+.left h3{
+  color:hsl(241, 100%, 89%);
+}
+
+.left p{
+  max-width: 26ch;
+  color:hsl(241, 100%, 89%);
+  font-weight: 500;
+}
+
+.circle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 12em;
+  aspect-ratio: 1;
+  background: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+  border-radius: 100%;
+}
+
+.circle h1{
+  font-size: 3.5em;
+}
+
+.right{
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.right h2{
+  color: hsl(224, 30%, 27%);
+}
+
+.right .card{
+  width: 16em;
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  border-radius: 0.5em;
+}
+
+.right .cards{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card p{
+  margin-left: auto;
+  color:  hsl(224, 30%, 27%);
+  font-weight: 800;
+}
+
+.card p span{
+  color:hsl(224, 30%, 57%);
+  font-weight: 500;
+}
+
+.card:nth-of-type(1){
+  background: hsla(0, 100%, 67%, 0.05);
+  color: hsla(0, 100%, 67%, 1);
+}
+
+.card:nth-of-type(2){
+  background: hsla(39, 100%, 56%, 0.05);
+  color: hsl(39, 100%, 56%);
+}
+
+.card:nth-of-type(3){
+  background: hsla(166, 100%, 37%, 0.05);
+  color: hsla(166, 100%, 37%, 1);
+}
+
+.card:nth-of-type(4){
+  background: hsla(234, 85%, 45%, 0.05);
+  color: hsla(234, 85%, 45%, 1);
+}
+
+.right button{
+  all:unset;
+  background: hsl(224, 30%, 27%);
+  color: white;
+  text-align: center;
+  padding: 0.75em;
+  cursor: pointer;
+  border-radius: 4em;
+}
