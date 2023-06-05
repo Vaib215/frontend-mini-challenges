@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <form class="hero-content">
+      <h1>Stay Updated!</h1>
+      <p>Join 60,000+ products managers receiving monthly updates on:</p>
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <div class="input-wrapper">
+        <label for="email"><span>Email address</span><span class="error-message">Valid email required</span></label>
+        <input type="email" placeholder="email@company.com" name="email" id="email">
+      </div>
+      <button>Subscribe to monthly newsletter</button>
+    </form>
+    <div class="hero-illustration">
+      <picture>
+        <source media="(min-width:768px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="hero-illustration">
+      </picture>
+    </div>
+    <div class="success-message">
+      <img src="./assets/images/icon-success.svg" alt="success">
+      <h1>
+        Thanks for subscribing!
+      </h1>
+      <p>
+        A confirmation mail has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside it to confirm your subscription.
+      </p>
+      <button>Dismiss message</button>
+    </div>
+  </main>
+</body>
+</html>
