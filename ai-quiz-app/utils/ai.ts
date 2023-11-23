@@ -6,11 +6,10 @@ export const getAITopics = async (count: number) => {
   return topics;
 };
 
-export const createQuiz = async (topic: string) => {
-  const quiz = await chatBackend(
-    `You are a quiz creator. Your task is to create a quiz of 10 questions on the topic I give you. Return the response as JSON object only. In the next message I will give you the topic. Dont send me anything except the JSON response, nothing except JSON Code. Return response as
-    "questions": [
-      {
+export const createQuiz = async (topic: string, count: number) => {
+  const quiz = await chatAPI(
+    `You are a quiz creator. Your task is to create a quiz of ${count} questions on the topic I give you. In the next message I will give you the topic. Dont send me anything except the JSON response, nothing except JSON Code. Try to compress the JSON and without beautify. Return response as
+      questions: [{
         "question": string,
         "options": string[],
         "answer": string
@@ -18,34 +17,35 @@ export const createQuiz = async (topic: string) => {
       ...
     ]
     `,
-    topic
+    topic,
   );
   return quiz?.questions;
 };
 
-// export const chatAPI = async (prompt: string, message: string) => {
-//   try {
-//     const response = await fetch("https://nqj4xd-5000.csb.app/chat", {
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         message,
-//         prompt,
-//       }),
-//       method: "POST",
-//       next: {
-//         revalidate: 60,
-//       },
-//     });
-//     const json = await response.json();
-//     return json;
-//   } catch (error) {
-//     return null;
-//   }
-// };
 
-export const chatBackend = async (prompt: string, message: string) => {
+export const chatAPI = async (prompt: string, message: string) => {
+  try {
+    const response = await fetch("https://nqj4xd-5000.csb.app/chat", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message,
+        prompt,
+      }),
+      method: "POST",
+      next: {
+        revalidate: 60,
+      },
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const chatBackend = async (prompt: string, message: string, cache:RequestCache = "default") => {
   try {
     const response = await fetch("https://chatanywhere.app/api/chat", {
       method: "POST",
@@ -70,6 +70,7 @@ export const chatBackend = async (prompt: string, message: string) => {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: cache
     });
     const json = await response.json();
     return json;

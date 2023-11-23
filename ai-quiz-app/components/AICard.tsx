@@ -17,7 +17,7 @@ export default function AICard({ topics }: { topics: string[] }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTopic((prev) => {
-        if (prev + 1 >= topics.length) {
+        if (prev + 1 >= topics?.length) {
           return 0;
         }
         return prev + 1;
@@ -27,7 +27,7 @@ export default function AICard({ topics }: { topics: string[] }) {
   }, [topics]);
 
   useEffect(() => {
-    if (activeTopic < topics.length) {
+    if (activeTopic < topics?.length) {
       const topic = topics[activeTopic];
       let index = -1;
       setTypewriter("");
@@ -65,7 +65,7 @@ export default function AICard({ topics }: { topics: string[] }) {
         value={topic}
         onChange={(e) => setTopic(e.target.value)}
         className="card-title my-6 flex-1 mr-4 input text-primary"
-        placeholder={topics.length ? typewriter : "Enter your own topic"}
+        placeholder={topics?.length ? typewriter : "Enter your own topic"}
       />
     </form>
   );

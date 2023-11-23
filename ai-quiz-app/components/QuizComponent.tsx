@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import OptionCard from "./OptionCard";
 
-export default async function QuizComponent({
+export default function QuizComponent({
   questions,
   activeQuestionIndex,
 }: {
@@ -13,7 +13,7 @@ export default async function QuizComponent({
   activeQuestionIndex: number;
 }) {
 
-  if (activeQuestionIndex >= questions?.length!) {
+  if (activeQuestionIndex >= questions?.length) {
     redirect("/quiz/completed");
   }
 
