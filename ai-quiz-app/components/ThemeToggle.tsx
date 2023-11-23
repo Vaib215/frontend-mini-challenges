@@ -53,7 +53,7 @@ export default function ThemeToggle() {
       </label>
       <div className="-z-10">
         <Image
-          src={`pattern-${theme}.svg`}
+          src={`/pattern-${theme}.svg`}
           fill
           alt=""
           className="absolute inset-0 invisible lg:visible"
